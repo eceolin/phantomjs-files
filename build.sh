@@ -111,5 +111,5 @@ cd src/qt && ./preconfig.sh --jobs $COMPILE_JOBS --qt-config "$QT_CFG" $SILENT &
 
 echo "Building main PhantomJS application. Please wait..."
 echo
-src/qt/bin/qmake $QMAKE_ARGS
+bin/qmake $QMAKE_ARGS
 make -j$COMPILE_JOBS
