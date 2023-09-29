@@ -100,6 +100,8 @@ echo
 echo "Building PhantomJS. Please wait..."
 echo
 
+apt-get install -y build-essential
+
 UNAME_SYSTEM=`(uname -s) 2>/dev/null`  || UNAME_SYSTEM=unknown
 UNAME_RELEASE=`(uname -r) 2>/dev/null` || UNAME_RELEASE=unknown
 UNAME_MACHINE=`(uname -m) 2>/dev/null` || UNAME_MACHINE=unknown
@@ -111,5 +113,5 @@ cd src/qt && ./preconfig.sh --jobs $COMPILE_JOBS --qt-config "$QT_CFG" $SILENT &
 
 echo "Building main PhantomJS application. Please wait..."
 echo
-bin/qmake $QMAKE_ARGS
+src/qt/bin/qmake $QMAKE_ARGS
 make -j$COMPILE_JOBS
